@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { alumnos } from './curso';
+import { UsersService } from '../../../../core/services/users.service';
+
+
 
 
 @Component({
@@ -8,7 +11,7 @@ import { alumnos } from './curso';
   styleUrl: './alumnos.component.scss'
 })
 export class AlumnosComponent {
-  displayedColumns: string[] = ['id','nombre','apellido','email','curso'];
+  displayedColumns: string[] = ['id','nombre','apellido','email','curso','accion',];
 
   dataSource :alumnos[] =[
     {
@@ -27,6 +30,18 @@ export class AlumnosComponent {
   contraseña:'321654',
   curso:'Sociales'
 }];
+
+constructor(private usersService: UsersService){}
+
+onDeleteUser(ev:alumnos): void{
+  //this.loadingService.setIsLoading(true)
+  //this.usersService.
+
+}
+
+
+
+
 // esto no lo pude lograr!
 onalumnosSubmitted(ev:alumnos): void{
 //this.dataSource.push(ev);
@@ -34,4 +49,6 @@ this.dataSource = [...this.dataSource,ev];
 }
 
 }
+
+
 

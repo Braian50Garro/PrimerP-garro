@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsersService } from '../../../../core/services/users.service';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -18,8 +20,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AlumnosFormComponent
   ],
   imports: [
-    CommonModule,MatTableModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatButtonModule,ReactiveFormsModule,
+    CommonModule,MatTableModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatButtonModule,ReactiveFormsModule,MatIconModule,
   ],
   exports:[AlumnosComponent],
+  providers:[
+    UsersService
+  ]
 })
 export class AlumnosModule { }

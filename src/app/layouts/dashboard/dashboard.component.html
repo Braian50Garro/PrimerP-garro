@@ -1,12 +1,29 @@
 <mat-drawer-container class="dashboard-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      @if (showFiller) {
-        <p>Lorem, ipsum dolor sit amet consectetur.</p>
-      }
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+    <mat-drawer #drawer class="dashboard-sidebar" mode="side">
+      <!-- aca nose porque no me dirige a la paginas-->
+      <mat-nav-list>
+
+        <a #inicioLink="routerLinkActive"
+        routerLinkActive
+        [activated]="inicioLink.isActive"
+        routerlink="inicio" mat-list-item>Inicio</a>
+        
+        <a  #alumnosLink="routerLinkActive"
+        routerLinkActive
+        [activated]="alumnosLink.isActive" 
+        routerlink="alumnos" mat-list-item>Alumnos</a>
+
+        <a  #materiaLink="routerLinkActive"
+        routerLinkActive
+        [activated]="materiaLink.isActive" 
+        routerlink="materia" mat-list-item>Materias</a>
+        
+        <a  #sesionLink="routerLinkActive"
+        routerLinkActive
+        [activated]="sesionLink.isActive"
+        routerlink="" mat-list-item>Cerrar sesion</a>
+        
+      </mat-nav-list>
     </mat-drawer>
   
     <div class="example-sidenav-content">
@@ -25,5 +42,7 @@
       </mat-toolbar>
       </div>
   
-<div class="p-5"><app-alumnos></app-alumnos></div>
+   <!--<div class="p-5"><app-alumnos></app-alumnos></div>-->
+
+   <router-outlet></router-outlet>
   </mat-drawer-container>
